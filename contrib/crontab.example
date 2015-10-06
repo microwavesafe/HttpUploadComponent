@@ -3,3 +3,6 @@
 # that haven't been accessed for 30 days (and you don't have your drive mounted
 # with the noatime option), use -atime instead.
 0 3 * * * * find /var/www/blobstorage -ctime +30 -type f -exec rm -f \{\} \; >/dev/null 2>&1
+
+# delete empty folders from data folder at 4 am
+0 4 * * * find /var/www/blobstorage -type d -empty rmdir \{\} \; >/dev/null 2>&1
