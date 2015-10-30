@@ -78,3 +78,4 @@ creating a pull request.
 * [Conversations](http://conversations.im) (used to send files to Multi User
 Conferences and to multiple resources in 1 on 1 chats.)
 * Gajim (with a [plugin](https://trac-plugins.gajim.org/wiki/HttpUploadPlugin))
+* [Xabber](http://www.xabber.com/)
