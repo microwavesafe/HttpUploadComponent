@@ -1,0 +1,22 @@
+component_jid: upload.example.com
+component_secret: thesecretmessageforxmppserver
+component_port: 5347
+
+storage_path : /var/www/httpuploadcomponent/
+
+whitelist:
+  im.example.com                      # must be same as XMPP domain, add a line per domain
+
+max_file_size: 41943040               # 40 MiB
+
+http_address: 127.0.0.1               # use 0.0.0.0 if you don't want to use a proxy
+http_port: 8284                       # must match port in nginx setup
+
+get_url : https://upload.example.com
+put_url : https://upload.example.com
+
+expire_interval: 82800                #time in secs between expiry runs (82800 secs = 23 hours). set to '0' to disable
+expire_maxage: 2592000                #files older than this (in secs) get deleted by expiry runs (2592000 = 30 days)
+user_quota_hard: 209715200            #200MiB. set to '0' to disable rejection on uploads over hard quota
+user_quota_soft: 157366400            #150MiB. set to '0' to disable deletion of old uploads over soft quota an expiry runs
+allow_web_clients: true               #answer OPTIONS requests to allow web clients to upload files 
