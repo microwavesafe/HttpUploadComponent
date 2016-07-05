@@ -1,0 +1,29 @@
+This is a package of the available files in the main repository and the contrib directory. The package dependencies are for Ubuntu 16.04 so YMMV.
+
+From command line run
+
+$ dpkg-deb --build prosody-httpuploadcomponent-0.0.1/
+
+to create a debian package that installs alongisde nginx and prosody. You need to configure
+
+/etc/prosody/HttpUploadComponent/config.yml
+
+component_jid: <upload url>
+
+whitelist:
+  <xmpp domain>
+  <another xmpp domain>
+
+get_url : https://<upload url>
+put_url : https://<upload url>
+
+
+/etc/prosody/conf.d/upload.cfg.lua
+
+in disco_items <upload url>
+in Component <upload url>
+
+
+/etc/nginx/sites-available/prosody-httpuploadcomponent
+
+server_name  <upload url>
