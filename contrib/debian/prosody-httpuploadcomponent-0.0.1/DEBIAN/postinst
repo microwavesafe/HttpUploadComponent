@@ -23,6 +23,7 @@ case "$1" in
     chmod +x /etc/init.d/httpuploadcomponent
     update-rc.d httpuploadcomponent defaults 91
     ln -s /etc/nginx/sites-available/prosody-httpuploadcomponent /etc/nginx/sites-enabled/prosody-httpuploadcomponent
+    service httpuploadcomponent restart
     service nginx restart
     service prosody restart
   ;;
